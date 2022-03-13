@@ -32,7 +32,7 @@ fun commissionCalculation(
     lastTransferAmount: Int = 0
 ) {
     if ((accountType == AccountType.VKPay && (lastTransferAmount <= VK_MONTH_LIMIT || transferAmount <= VK_LIMIT)) ||
-        (accountType != AccountType.VKPay && (lastTransferAmount <= DAY_LIMIT || transferAmount <= MONTH_LIMIT))
+        (accountType != AccountType.VKPay && (lastTransferAmount <= MONTH_LIMIT || transferAmount <= DAY_LIMIT))
     ) {
         val visaMirCommission = (transferAmount * .75 / 100).toInt()
         val calculatedCommission: Int = when (accountType) {
