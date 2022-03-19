@@ -34,7 +34,7 @@ fun main() {
 
 fun commissionCalculation(
     transferAmount: Int,
-    accountType: AccountType = AccountType.VKPay,
+    accountType: AccountType = AccountType.VKPay
 ): Int {
     val calculatedCommission: Int
     val visaMirCommission = (transferAmount * .75 / 100).toInt()
@@ -66,6 +66,6 @@ fun isLimit(
     accountType: AccountType = AccountType.VKPay,
     lastTransferAmount: Int = 0
 ): Boolean {
-    return (accountType == AccountType.VKPay && (lastTransferAmount <= VK_MONTH_LIMIT || transferAmount <= VK_LIMIT)) ||
-            (accountType != AccountType.VKPay && (lastTransferAmount <= MONTH_LIMIT || transferAmount <= DAY_LIMIT))
+    return ((accountType == AccountType.VKPay) && (lastTransferAmount <= VK_MONTH_LIMIT || transferAmount <= VK_LIMIT)) ||
+            ((accountType != AccountType.VKPay) && (lastTransferAmount <= MONTH_LIMIT || transferAmount <= DAY_LIMIT))
 }
