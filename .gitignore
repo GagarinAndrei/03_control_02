@@ -43,4 +43,4 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-!build/reports/jacoco/**
+!/build/reports/jacoco/
